@@ -4,7 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type Author.
@@ -18,6 +21,9 @@ public class Author {
   private Long id;
   private String name;
   private String nationality;
+
+  @ManyToMany(mappedBy = "authors")
+  private List<Book> books = new ArrayList<>();
 
   /**
    * Instantiates a new Author.
@@ -87,6 +93,25 @@ public class Author {
    * @param nationality the nationality
    */
   public void setNationality(String nationality) {
+
     this.nationality = nationality;
+  }
+
+  /**
+   * Gets books.
+   *
+   * @return the books
+   */
+  public List<Book> getBooks() {
+    return books;
+  }
+
+  /**
+   * Sets books.
+   *
+   * @param books the books
+   */
+  public void setBooks(List<Book> books) {
+    this.books = books;
   }
 }

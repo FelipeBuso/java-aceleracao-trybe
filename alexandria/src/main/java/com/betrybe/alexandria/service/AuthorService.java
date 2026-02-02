@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthorService {
 
-  private AuthorRepository authorRepository;
+  private final AuthorRepository authorRepository;
 
   /**
    * Instantiates a new Author service.

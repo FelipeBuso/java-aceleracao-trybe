@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PublisherService {
 
-  private PublisherRepository publisherRepository;
+  private final PublisherRepository publisherRepository;
 
   /**
    * Instantiates a new Publisher service.
